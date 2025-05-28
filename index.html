@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamento de Barbearia</title>
+  <link rel="stylesheet" href="../frontend/css/style.css" />
+</head>
+<body>
+  <header>
+    <p><a href="">Agendar</a></p>
+    <p><a href="..//frontend/pages/agendamento/agendamento.html">Agendamentos</a></p>
+    <p><a href="../frontend/pages/contato/contato.html">Contato</a></p>
+    <p><a href="../frontend/pages/sobre/sobre.html">Sobre</a></p>
+  </header>
+
+  <div class="container">
+    <h1>Agende seu horário</h1>
+    <form id="formAgendamento">
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="tel" name="telefone" placeholder="Telefone" required />
+      <input type="date" name="data" required />
+      <input type="time" name="hora" required />
+      <button type="submit">Agendar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('formAgendamento').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const dados = Object.fromEntries(formData.entries());
+
+      try {
+        const resposta = await fetch('http://localhost:3000/api/agendar', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dados)
+        });
+
+        const resultado = await resposta.json();
+        alert(resultado.mensagem || resultado.erro);
+      } catch (erro) {
+        console.error('Erro ao enviar agendamento:', erro);
+        alert('Erro ao enviar agendamento. Veja o console para mais detalhes.');
+      }
+    });
+  </script>
+</body>
+</html>
