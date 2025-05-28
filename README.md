@@ -1,3 +1,1 @@
-# Sistema de Agendamento para Barbeiros
-
-# Meu nome é Daniel Santos, eu tenho 16 anos e faço o Ensino Médio integrado ao técnico em Eletrônica... nesse projeto quis fazer algo diferente do normal, me desafiando a aprender conteúdos novos em pouco tempo! Essa SAAS está em fase de desenvolvimento, irei integrar ela a uma IA de automação no Whatsapp chamada WAGPT que também é uma SAAS, que está sendo desenvolvida por mim.
+# Sistema de automação de Whatsapp

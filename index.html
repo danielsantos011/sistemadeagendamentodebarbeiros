@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agendamento de Barbearia</title>
-  <link rel="stylesheet" href="../frontend/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZapGPT - Configure em 5 Passos</title>
+  <link rel="stylesheet" href="/frontend/css/style.css">
 </head>
 <body>
-  <header>
-    <p><a href="">Agendar</a></p>
-    <p><a href="..//frontend/pages/agendamento/agendamento.html">Agendamentos</a></p>
-    <p><a href="../frontend/pages/contato/contato.html">Contato</a></p>
-    <p><a href="../frontend/pages/sobre/sobre.html">Sobre</a></p>
+
+  <header class="navbar">
+    <div class="logo">Dan<span>GPT</span></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Como Usar</a>
+      <a href="#">Funcionalidades</a>
+      <a href="#">Preços</a>
+      <a href="#">Sobre</a>
+      <a href="#">FAQ</a>
+    </nav>
+    <a href="#" class="btn-primary">Começar Agora ➜</a>
   </header>
 
-  <div class="container">
-    <h1>Agende seu horário</h1>
-    <form id="formAgendamento">
-      <input type="text" name="nome" placeholder="Nome" required />
-      <input type="tel" name="telefone" placeholder="Telefone" required />
-      <input type="date" name="data" required />
-      <input type="time" name="hora" required />
-      <button type="submit">Agendar</button>
-    </form>
+  <main>
+    <section class="intro">
+      <div class="badge">FÁCIL E RÁPIDO</div>
+      <h1>Configure o <span class="highlight">DanGPT</span> em <span class="highlight">5 Passos Simples</span>! 📲</h1>
+      <p>Você só precisa seguir os passos abaixo para conectar o Zap GPT ao seu WhatsApp e automatizar o atendimento com as melhores inteligências artificiais.</p>
+    </section>
+
+    <section class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h2>Clique em "Configurações da IA"</h2>
+        <p>Acesse o botão "Configurações da IA" para começar a personalizar o assistente e definir como ele deve funcionar.</p>
+      </div>
+      <img src="screenshot.png" alt="Configuração ZapGPT" class="screenshot">
+    </section>
+  </main>
+
+  <div class="offer-banner">
+    <div class="text">
+      <strong>ÚLTIMOS DIAS</strong> <br>
+      OFERTA DE MAIO <span class="price">R$397,00!</span>
+    </div>
+    <div class="countdown" id="countdown">Encerra em: 03d 05h 12m 34s</div>
+    <div class="buttons">
+      <a href="#" class="btn-secondary">▶ Ver vídeo</a>
+      <a href="#" class="btn-primary">💲 Ver preços</a>
+    </div>
   </div>
 
-  <script>
-    document.getElementById('formAgendamento').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const formData = new FormData(this);
-      const dados = Object.fromEntries(formData.entries());
-
-      try {
-        const resposta = await fetch('http://localhost:3000/api/agendar', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(dados)
-        });
-
-        const resultado = await resposta.json();
-        alert(resultado.mensagem || resultado.erro);
-      } catch (erro) {
-        console.error('Erro ao enviar agendamento:', erro);
-        alert('Erro ao enviar agendamento. Veja o console para mais detalhes.');
-      }
-    });
-  </script>
+  <script src="/frontend/css/js.js"></script>
 </body>
 </html>
