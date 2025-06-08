@@ -140,3 +140,55 @@ body {
   border-radius: 10px;
   text-decoration: none;
 }
+/* Estilo extra para os cards de planos */
+.plan-card {
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+}
+
+.plan-card:hover {
+  transform: scale(1.03);
+  border-color: #31c48d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.plan-highlight {
+  border-color: #31c48d !important;
+  background-color: #f0fdf4;
+}
+
+.plan-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.plan-price {
+  color: #31c48d;
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.plan-features {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.btn-plan {
+  background-color: #31c48d;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  text-align: center;
+  font-weight: 600;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.btn-plan:hover {
+  background-color: #22c55e;
+}
